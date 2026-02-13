@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Zytra Terminal
-Comment=Terminal emulator for Zytra OS
-Exec=/usr/bin/zytra-terminal
-Icon=zytra-terminal
-Type=Application
-Terminal=false
-Categories=System;TerminalEmulator;
