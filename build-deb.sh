@@ -51,7 +51,7 @@ Priority: optional
 Architecture: $ARCH
 Depends: libgtk-3-0, libblkid1, liblzma5, libglfw3, libx11-6, libxrandr2, libxinerama1, libxcursor1, libxi6
 Recommends: bash, zsh
-Maintainer: Your Name <your@email.com>
+Maintainer: Atrox39 <atrox390@gmail.com>
 Description: Terminal emulator for Zytra OS
  Zytra Terminal is a modern, fast terminal emulator built with Flutter.
  Features include multiple tabs, custom themes, and hardware acceleration.
