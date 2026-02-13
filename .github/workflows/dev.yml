@@ -1,0 +1,73 @@
+name: Development CI
+
+on:
+  push:
+    branches: [ "dev", "feature/*", "dev/*" ]
+  pull_request:
+    branches: [ "dev" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
+          sudo apt-get install -y libkeybinder-3.0-dev libayatana-appindicator3-dev
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          
+      - name: Install Project Dependencies
+        run: flutter pub get
+
+      - name: Analyze Code (Linting)
+        run: flutter analyze
+        continue-on-error: false
+
+      - name: Check Formatting
+        run: dart format --set-exit-if-changed .
+        continue-on-error: true # Allow formatting issues but warn
+
+      - name: Run Tests
+        run: flutter test --coverage
+        
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: coverage-report
+          path: coverage/lcov.info
+          retention-days: 5
+
+      - name: Build and Package (Dry Run)
+        run: |
+          chmod +x build-deb.sh
+          ./build-deb.sh
+        env:
+          # Optional: Skip signing if implemented later
+          SKIP_SIGNING: true
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: zytra-terminal-dev-build
+          path: dist/*.deb
+          retention-days: 5
+          
+      - name: Notify on Failure
+        if: failure()
+        run: |
+          echo "::error::CI Pipeline Failed! Check logs for details."
