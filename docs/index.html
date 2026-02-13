@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zytra Terminal - Modern Terminal Emulator for Linux</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e1e2e 0%, #313244 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #89b4fa 0%, #94e2d5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(137, 180, 250, 0.2);
+        }
+        
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(137, 180, 250, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-gray-900 via-gray-900 to-black text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-gray-900/80 backdrop-blur border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold gradient-text">Zytra Terminal</h1>
+            <div class="space-x-6">
+                <a href="#features" class="hover:text-blue-400 transition">Features</a>
+                <a href="#installation" class="hover:text-blue-400 transition">Installation</a>
+                <a href="https://github.com/atrox39/zytra-terminal" target="_blank" class="hover:text-blue-400 transition">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen pt-32 pb-20 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-6xl font-black mb-6 gradient-text leading-tight">
+                The Modern Terminal Emulator
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                Experience a sleek, feature-rich terminal emulator built with Flutter. 
+                Tabbed sessions, system hotkeys, and beautiful Catppuccin theme out of the box.
+            </p>
+            <div class="flex gap-6 justify-center mb-16">
+                <a href="#installation" class="cta-button px-8 py-4 bg-blue-500 hover:bg-blue-600 rounded-lg font-bold text-lg">
+                    Get Started
+                </a>
+                <a href="https://github.com" target="_blank" class="cta-button px-8 py-4 border-2 border-blue-500 hover:bg-blue-500/10 rounded-lg font-bold text-lg">
+                    View on GitHub
+                </a>
+            </div>
+            <div class="mt-16 rounded-lg overflow-hidden border border-gray-700 shadow-2xl">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Crect fill='%23181825' width='800' height='500'/%3E%3Ctext x='50' y='50' font-family='monospace' font-size='16' fill='%23a6e3a1'%3E%24 neovim%3C/text%3E%3Ctext x='50' y='100' font-family='monospace' font-size='14' fill='%23cdd6f4'%3E~ Welcome to Zytra Terminal ~%3C/text%3E%3C/svg%3E" alt="Terminal Preview" class="w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 px-6 bg-gray-900/50">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-4xl font-bold mb-4 text-center gradient-text">Powerful Features</h3>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
+                Everything you need for a productive terminal experience
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature Card 1 -->
+                <div class="feature-card bg-gray-800/50 border border-gray-700 p-8 rounded-xl">
+                    <div class="text-4xl mb-4">📑</div>
+                    <h4 class="text-xl font-bold mb-3">Tabbed Sessions</h4>
+                    <p class="text-gray-400">
+                        Manage multiple terminal instances effortlessly with intuitive tab switching
+                    </p>
+                </div>
+
+                <!-- Feature Card 2 -->
+                <div class="feature-card bg-gray-800/50 border border-gray-700 p-8 rounded-xl">
+                    <div class="text-4xl mb-4">⌨️</div>
+                    <h4 class="text-xl font-bold mb-3">System Hotkeys</h4>
+                    <p class="text-gray-400">
+                        Ctrl+T for new tab, Ctrl+W to close, Ctrl+Shift+T to restore, F11 for fullscreen
+                    </p>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div class="feature-card bg-gray-800/50 border border-gray-700 p-8 rounded-xl">
+                    <div class="text-4xl mb-4">🎨</div>
+                    <h4 class="text-xl font-bold mb-3">Beautiful Theme</h4>
+                    <p class="text-gray-400">
+                        Catppuccin Mocha color scheme for reduced eye strain and maximum aesthetics
+                    </p>
+                </div>
+
+                <!-- Feature Card 4 -->
+                <div class="feature-card bg-gray-800/50 border border-gray-700 p-8 rounded-xl">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h4 class="text-xl font-bold mb-3">PTY Support</h4>
+                    <p class="text-gray-400">
+                        Full pseudo-terminal support for vim, neovim, and other interactive TUI applications
+                    </p>
+                </div>
+
+                <!-- Feature Card 5 -->
+                <div class="feature-card bg-gray-800/50 border border-gray-700 p-8 rounded-xl">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h4 class="text-xl font-bold mb-3">Responsive Design</h4>
+                    <p class="text-gray-400">
+                        Automatic window resize handling with proper signal support for seamless experience
+                    </p>
+                </div>
+
+                <!-- Feature Card 6 -->
+                <div class="feature-card bg-gray-800/50 border border-gray-700 p-8 rounded-xl">
+                    <div class="text-4xl mb-4">🖱️</div>
+                    <h4 class="text-xl font-bold mb-3">Intuitive Controls</h4>
+                    <p class="text-gray-400">
+                        Double-click title bar to maximize, draggable window, custom control buttons
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="py-24 px-6 bg-gray-950/50">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-4xl font-bold mb-16 text-center gradient-text">Quick Start</h3>
+            
+            <div class="space-y-8">
+                <!-- Prerequisites -->
+                <div class="bg-gray-800/50 border border-gray-700 p-8 rounded-xl">
+                    <h4 class="text-2xl font-bold mb-4">Prerequisites</h4>
+                    <p class="text-gray-400 mb-4">Before installing Zytra Terminal, ensure you have:</p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><span class="text-blue-400 mr-3">✓</span> Linux system (Ubuntu 20.04+)</li>
+                        <li class="flex items-center"><span class="text-blue-400 mr-3">✓</span> 64-bit processor</li>
+                        <li class="flex items-center"><span class="text-blue-400 mr-3">✓</span> Required libraries installed</li>
+                    </ul>
+                </div>
+
+                <!-- Installation Steps -->
+                <div class="bg-gray-800/50 border border-gray-700 p-8 rounded-xl">
+                    <h4 class="text-2xl font-bold mb-4">Installation Steps</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-blue-400 font-mono mb-2">Step 1: Install Dependencies</p>
+                            <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                                <code class="text-green-400">sudo apt-get install -y libkeybinder-3.0-dev libayatana-appindicator3-dev</code>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-blue-400 font-mono mb-2">Step 2: Download Latest Release</p>
+                            <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                                <code class="text-green-400">wget https://github.com/atrox39/zytra-terminal/releases/latest</code>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-blue-400 font-mono mb-2">Step 3: Extract and Run</p>
+                            <div class="bg-gray-900 p-4 rounded border border-gray-700">
+                                <code class="text-green-400">tar xzf zytra-terminal-*.tar.gz && ./zytra-terminal/zytra_terminal</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Keyboard Shortcuts -->
+                <div class="bg-gray-800/50 border border-gray-700 p-8 rounded-xl">
+                    <h4 class="text-2xl font-bold mb-4">Keyboard Shortcuts</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex justify-between items-center p-2 bg-gray-900/50 rounded">
+                            <span class="text-gray-300">New Tab</span>
+                            <span class="font-mono text-blue-400">Ctrl+T</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-gray-900/50 rounded">
+                            <span class="text-gray-300">Close Tab</span>
+                            <span class="font-mono text-blue-400">Ctrl+W</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-gray-900/50 rounded">
+                            <span class="text-gray-300">Restore Tab</span>
+                            <span class="font-mono text-blue-400">Ctrl+Shift+T</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 bg-gray-900/50 rounded">
+                            <span class="text-gray-300">Fullscreen</span>
+                            <span class="font-mono text-blue-400">F11</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 px-6 bg-gradient-bg">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+            <div>
+                <div class="text-5xl font-bold gradient-text mb-2">v1.0.0</div>
+                <p class="text-gray-400">Latest Version</p>
+            </div>
+            <div>
+                <div class="text-5xl font-bold gradient-text mb-2">Linux</div>
+                <p class="text-gray-400">Platform</p>
+            </div>
+            <div>
+                <div class="text-5xl font-bold gradient-text mb-2">100%</div>
+                <p class="text-gray-400">Open Source</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6 bg-gray-900/50">
+        <div class="max-w-2xl mx-auto text-center">
+            <h3 class="text-4xl font-bold mb-6 gradient-text">Ready to Upgrade Your Terminal?</h3>
+            <p class="text-gray-400 mb-8">
+                Download Zytra Terminal today and experience a modern, fast, and beautiful terminal emulator
+            </p>
+            <div class="flex gap-6 justify-center">
+                <a href="#installation" class="cta-button px-8 py-4 bg-blue-500 hover:bg-blue-600 rounded-lg font-bold text-lg">
+                    Download Now
+                </a>
+                <a href="https://github.com/atrox39/zytra-terminal" target="_blank" class="cta-button px-8 py-4 border-2 border-blue-500 hover:bg-blue-500/10 rounded-lg font-bold text-lg">
+                    Star on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-12 px-6 bg-gray-950">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-bold mb-4 gradient-text">Zytra Terminal</h4>
+                    <p class="text-gray-400 text-sm">Modern terminal emulator for Linux</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#features" class="hover:text-blue-400">Features</a></li>
+                        <li><a href="#installation" class="hover:text-blue-400">Installation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Community</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="https://github.com" target="_blank" class="hover:text-blue-400">GitHub</a></li>
+                        <li><a href="https://github.com/issues" target="_blank" class="hover:text-blue-400">Report Issues</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Version</h4>
+                    <p class="text-gray-400 text-sm">v1.0.0</p>
+                    <p class="text-gray-500 text-xs mt-2">February 2026</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 Zytra Terminal. Open Source & Free.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
