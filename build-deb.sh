@@ -4,7 +4,7 @@
 set -e
 
 APP_NAME="zytra-terminal"
-VERSION="1.0.0"
+VERSION="1.0.1"
 ARCH="amd64"
 BUILD_DIR="build/linux/x64/release/bundle"
 DEB_ROOT="dist/deb_root"
